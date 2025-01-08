@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post! It's exciting to start my blog."
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is my second post where I share my experiences of traveling to different places."
+    },
+    {
+        "id": 3,
+        "author": "Alice Smith",
+        "title": "Third Post",
+        "content": "Exploring the wonders of the world. This post is all about the amazing things I've discovered."
+    }
+]

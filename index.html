@@ -3,25 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Flask Blog</title>
+    <title>Blog Posts</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to My Flask Blog!</h1>
-    <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
-    </div>
-    <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
-    </div>
-    <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
-    </div>
+    <h1>Blog Posts</h1>
+
+    <!-- Flash messages for success/error -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h2>{{ post.title }}</h2>
+                <p><strong>Author:</strong> {{ post.author }}</p>
+                <p>{{ post.content }}</p>
+
+                <!-- Link to update the blog post -->
+                <a href="{{ url_for('update', post_id=post['id']) }}">Update</a> |
+                <!-- Link to delete the blog post -->
+                <a href="{{ url_for('delete', post_id=post['id']) }}" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2><a href="{{ url_for('add') }}">Add a New Post</a></h2>
 </body>
 </html>

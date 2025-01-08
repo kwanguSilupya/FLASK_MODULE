@@ -1,27 +1,54 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
-    padding: 20px;
-    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
 h1 {
     text-align: center;
-    color: #4F4F4F;
-}
-
-.post {
-    background-color: #FFF;
-    border: 1px solid #DDD;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
 }
 
-.post h2 {
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
     margin-top: 0;
 }
 
-.post p {
+form {
+    width: 50%;
+    margin: auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
 }
